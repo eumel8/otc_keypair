@@ -1,5 +1,13 @@
 ---
 - hosts: localhost
-  remote_user: root
+  gather_facts: no
+  vars_files:
+   - "vars/tenant.yml"
+  vars:
+    # Keypair
+    ecs_adminkey: "{{ default.ecs_adminkey }}"
+    keypair_file: "{{ default.keypair_file }}"
+
   roles:
-    - otc_keypair
+    - role: "otc_auth"
+    - role: "otc_keypair"

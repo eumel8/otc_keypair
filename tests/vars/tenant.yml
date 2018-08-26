@@ -1,0 +1,4 @@
+---
+default:
+  ecs_adminkey: "ansible-key02"
+  keypair_file: "travis_key.pub"
