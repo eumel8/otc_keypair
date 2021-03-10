@@ -6,7 +6,5 @@
 - name: Keypair lookup
   delegate_to: "{{ delegateto }}"
   include: lookup.yml
-#  when:
-#    - localaction is defined and localaction == "lookup"
   tags:
     - keypairlookup
