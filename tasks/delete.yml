@@ -17,5 +17,6 @@
   when: ecs_adminkey is defined and ecs_adminkey|length != 0
 #  ignore_errors: true
 
-- debug:
+- name: keypair
+  debug:
     msg: "{{ keypair }}"

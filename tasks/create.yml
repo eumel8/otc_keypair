@@ -31,5 +31,6 @@
     - keypair_file_stat.stat.exists
     - (not ecs_adminkey_name or ecs_adminkey_name is undefined)
 
-- debug:
+- name: keypair
+  debug:
     msg: "{{ keypair }}"

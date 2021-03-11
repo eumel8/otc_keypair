@@ -14,5 +14,6 @@
   until: keypairlist.status == 200
   changed_when: false
 
-- debug:
+- name: keypairlist
+  debug:
     msg: "{{ keypairlist.json }}"
