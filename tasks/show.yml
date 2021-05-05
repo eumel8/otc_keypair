@@ -2,7 +2,7 @@
   uri:
     url: "{{ AUTH_URL_ECS }}/os-keypairs/{{ ecs_adminkey }}"
     method: GET
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     headers:
@@ -14,6 +14,6 @@
   until: keypairdetail.status == 200
   changed_when: false
 
-
-- debug:
+- name: keypairdetail
+  debug:
     msg: "{{ keypairdetail.json }}"

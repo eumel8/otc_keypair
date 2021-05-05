@@ -2,7 +2,7 @@
   uri:
     url: "{{ AUTH_URL_ECS }}/os-keypairs/{{ ecs_adminkey }}"
     method: DELETE
-    return_content: yes
+    return_content: true
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
     status_code: 200,201,202,203,204
@@ -17,5 +17,6 @@
   when: ecs_adminkey is defined and ecs_adminkey|length != 0
 #  ignore_errors: true
 
-- debug:
+- name: keypair
+  debug:
     msg: "{{ keypair }}"
